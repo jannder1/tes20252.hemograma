@@ -77,5 +77,22 @@ Modelo de Assinatura: O software pode ser oferecido como um serviço (SaaS), com
 Licenciamento por Usuário: Alternativamente, o sistema pode ser licenciado por hospital ou laboratório, com valores ajustados conforme o número de usuários.
 5.3 ROI
 O retorno sobre investimento (ROI) pode ser alcançado a partir da redução de erros humanos, aumento na precisão dos diagnósticos e maior eficiência nos processos laboratoriais. O software pode também ajudar a evitar tratamentos inadequados, economizando custos com intervenções tardias.
+-------------------------------
+PATOLOGIA ESCOLHIDA: LEUCEMIA PROMIELOCÍTICA AGUDA (LPA/M3)
+Diagnóstico Definitivo pelo Hemograma
+Critério Patognomônico: Presença de promielócitos anômalos com bastonetes de Auer múltiplos
+Padrão Específico: Células com citoplasma granular denso + núcleo bilobulado + bastonetes de Auer em feixe
+Confiança: 98% - DIAGNÓSTICO DEFINITIVO
+Entrada de Dados:
+Leucócitos: 2.000-15.000/μL (pode ser baixo)
+Promielócitos anômalos: >30%
+Bastonetes de Auer múltiplos: PRESENTES
+Hemoglobina: 6-10 g/dL
+Plaquetas: <50.000/μL
+Saída:
+LEUCEMIA PROMIELOCÍTICA AGUDA - DIAGNÓSTICO CONFIRMADO
+Motivo da Certeza:
+Os promielócitos com bastonetes de Auer múltiplos são PATOGNOMÔNICOS da LPA. Nenhuma outra condição apresenta essa morfologia específica.
+
 Conclusão
 O desenvolvimento de um software para análise de hemogramas e detecção de doenças ocultas tem grande potencial no cenário atual de saúde.
