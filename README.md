@@ -7,6 +7,9 @@ Desenvolvimento de produto viável, software determinístico gerado por LLM para
 
 Este repositório contém a documentação completa de planejamento, histórias de usuário e análise de riscos para o sistema de detecção de doenças por hemograma.
 
+#### 📋 Documentos Principais
+
+- **[📊 Resumo Executivo](EXECUTIVE_SUMMARY.md)** - ⭐ **Comece aqui!** Visão geral do projeto, top 10 riscos, decisões críticas e ações imediatas
 - **[Histórias de Usuário](USER_STORIES.md)** - Descrição completa das funcionalidades do sistema com critérios de aceitação e backlog priorizado
 - **[Análise de Riscos](RISK_ANALYSIS.md)** - Identificação detalhada de riscos técnicos e de escopo para cada história de usuário
 - **[Matriz de Priorização](PRIORITIZATION_MATRIX.md)** - Priorização quantitativa de riscos baseada em impacto, complexidade e probabilidade
@@ -29,9 +32,10 @@ O sistema visa utilizar tecnologia de LLM (Large Language Models) para auxiliar 
 
 ### Como Usar Esta Documentação
 
-1. Leia primeiro as **[Histórias de Usuário](USER_STORIES.md)** para entender as funcionalidades planejadas
-2. Consulte a **[Análise de Riscos](RISK_ANALYSIS.md)** para compreender os desafios e estratégias de mitigação
-3. Use a **[Matriz de Priorização](PRIORITIZATION_MATRIX.md)** para decisões sobre investimentos e cronograma
+1. **Primeira Leitura**: Comece pelo **[📊 Resumo Executivo](EXECUTIVE_SUMMARY.md)** para ter uma visão geral rápida
+2. **Planejamento**: Leia as **[Histórias de Usuário](USER_STORIES.md)** para entender as funcionalidades planejadas
+3. **Gestão de Riscos**: Consulte a **[Análise de Riscos](RISK_ANALYSIS.md)** para compreender os desafios e estratégias de mitigação
+4. **Decisões**: Use a **[Matriz de Priorização](PRIORITIZATION_MATRIX.md)** para decisões sobre investimentos e cronograma
 
 ### Status do Projeto
 
