@@ -1,124 +1,104 @@
 
 
-
-
 | Seção                | Conteúdo                                                                 |
 |-----------------------|---------------------------------------------------------------------------|
 | **ID da História**    | HU-001                                                                   |
-| **Título**            | Cadastrar novo imóvel                                                    |
-| **Descrição**         | Como **corretor/imobiliária** <br> Quero **adicionar um novo imóvel no sistema** <br> Para que **ele possa ser consultado, gerenciado e oferecido a clientes** |
-| **Contexto / Observações** | - O cadastro deve incluir fotos e documentos do imóvel. <br> - Deve estar em conformidade com a LGPD e validação de endereço. |
-| **Cenários**          | 1. **Cadastro bem-sucedido** <br> Dado que o corretor preenche todos os campos obrigatórios <br> Quando salvar o cadastro <br> Então o sistema deve registrar o imóvel com status “disponível”. <br><br> 2. **Campos incompletos** <br> Dado que o corretor omite informações obrigatórias <br> Quando tentar salvar <br> Então o sistema deve exibir mensagem “Preencha todos os campos obrigatórios”. |
-| **Critérios de Aceitação** | - Deve permitir até 10 imagens. <br> - Todos os campos obrigatórios precisam ser validados. <br> - O status inicial deve ser “disponível”. |
-| **Critérios Técnicos (opcional)** | - Armazenamento de imagens em nuvem. <br> - Validação automática de CEP. <br> - Cadastro compatível com dispositivos móveis. |
+| **Título**            | Cadastrar novo exame de hemograma                                                    |
+| **Descrição**         | Como **profissional de saúde** <br> Quero **cadastrar um exame de hemograma no sistema** <br> Para que **o software possa processar e analisar os resultados automaticamente** |
+| **Contexto / Observações** | - O sistema deve aceitar arquivos PDF, CSV ou inserção manual. <br> - Deve estar em conformidade com a LGPD. |
+| **Cenários**          |1. **Cadastro bem-sucedido** <br> Dado que o profissional envia um exame válido <br> Quando salvar o exame <br> Então o sistema deve confirmar o cadastro e iniciar a análise. <br><br> 2. **Arquivo inválido** <br> Dado que o arquivo está corrompido ou com formato incorreto <br> Quando tentar enviar <br> Então o sistema deve exibir mensagem “Formato de exame inválido”. |
+| **Critérios de Aceitação** | - Deve aceitar arquivos PDF e CSV. <br> - Deve validar campos obrigatórios antes do envio. <br> - Deve confirmar o cadastro após upload bem-sucedido. |
+| **Critérios Técnicos (opcional)** | - Armazenamento criptografado em nuvem. <br> - Upload assíncrono. |
 
 
+| Seção                             | Conteúdo                                                                                                                                                                             |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **ID da História**                | HU-002                                                                                                                                                                               |
+| **Título**                        | Analisar automaticamente exames cadastrados                                                                                                                                          |
+| **Descrição**                     | Como **sistema de apoio ao diagnóstico** <br> Quero **analisar automaticamente os parâmetros hematológicos** <br> Para que **seja possível identificar padrões compatíveis com LPA** |
+| **Contexto / Observações**        | - A análise deve considerar parâmetros como leucócitos, plaquetas, promielócitos e bastonetes.                                                                                       |
+| **Cenários**                      | 1. **Análise concluída** <br> Dado que o hemograma é válido <br> Quando o sistema processa os dados <br> Então deve exibir o risco estimado de LPA.                                  |
+| **Critérios de Aceitação**        | - Tempo máximo de análise: 10 segundos. <br> - Exibir relatório automático com risco percentual.                                                                                     |
+| **Critérios Técnicos (opcional)** | - Implementar modelo de machine learning supervisionado. <br> - Logs de execução para rastreabilidade.                                                                               |
 
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-002                                                                   |
-| **Título**            | Cadastrar cliente interessado                                            |
-| **Descrição**         | Como **corretor ou atendente da imobiliária** <br> Quero **registrar dados e preferências de clientes interessados** <br> Para que **possa oferecer imóveis compatíveis com o perfil de busca** |
-| **Contexto / Observações** | - O cliente pode ser comprador ou locatário. <br> - Deve seguir as normas da LGPD para consentimento de dados. |
-| **Cenários**          | 1. **Cadastro concluído** <br> Dado que o corretor informa nome, CPF e contato <br> Quando salvar o cadastro <br> Então o sistema deve adicionar o cliente à base. |
-| **Critérios de Aceitação** | - Campos obrigatórios: nome, CPF/CNPJ, telefone e e-mail. <br> - Deve registrar data de consentimento LGPD. |
-| **Critérios Técnicos (opcional)** | - Validação automática de CPF. <br> - Integração com CRM. |
+| Seção                             | Conteúdo                                                                                                                                                               |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID da História**                | HU-003                                                                                                                                                                 |
+| **Título**                        | Exibir painel de resultados                                                                                                                                            |
+| **Descrição**                     | Como **médico hematologista** <br> Quero **visualizar todos os exames analisados em um painel** <br> Para que **possa acompanhar rapidamente os casos suspeitos**      |
+| **Contexto / Observações**        | - O painel deve destacar casos de alto risco em vermelho. <br> - Permitir filtros por paciente, data e status.                                                         |
+| **Cenários**                      | 1. **Exibição de exames** <br> Dado que há exames processados <br> Quando acessar o painel <br> Então o sistema deve listar os resultados com seus respectivos riscos. |
+| **Critérios de Aceitação**        | - Deve permitir filtros por nome, data e risco. <br> - Atualização automática a cada nova análise.                                                                     |
+| **Critérios Técnicos (opcional)** | - Frontend em React. <br> - Backend em Python (FastAPI).                                                                                                               |
 
+| Seção                             | Conteúdo                                                                                                                                                                        |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID da História**                | HU-004                                                                                                                                                                          |
+| **Título**                        | Gerar relatório diagnóstico detalhado                                                                                                                                           |
+| **Descrição**                     | Como **profissional de saúde** <br> Quero **gerar relatórios detalhados dos exames analisados** <br> Para que **possa anexá-los ao prontuário do paciente**                     |
+| **Contexto / Observações**        | - O relatório deve incluir gráficos e anomalias detectadas.                                                                                                                     |
+| **Cenários**                      | 1. **Geração de relatório PDF** <br> Dado que a análise foi concluída <br> Quando o médico solicitar <br> Então o sistema deve gerar um PDF com resumo, gráficos e observações. |
+| **Critérios de Aceitação**        | - Relatório deve conter identificação do paciente, data e assinatura digital.                                                                                                   |
+| **Critérios Técnicos (opcional)** | - Geração automática de PDF. <br> - Exportação compatível com sistemas hospitalares.                                                                                            |
 
+| Seção                             | Conteúdo                                                                                                                                                            |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID da História**                | HU-005                                                                                                                                                              |
+| **Título**                        | Notificar automaticamente casos suspeitos de LPA                                                                                                                    |
+| **Descrição**                     | Como **médico responsável** <br> Quero **receber notificações de casos suspeitos de LPA** <br> Para que **possa agir rapidamente no atendimento ao paciente**       |
+| **Contexto / Observações**        | - A notificação pode ser enviada por e-mail ou aplicativo móvel.                                                                                                    |
+| **Cenários**                      | 1. **Caso de alto risco** <br> Dado que o exame apresenta risco ≥ 80% <br> Quando a análise é concluída <br> Então o sistema deve enviar alerta imediato ao médico. |
+| **Critérios de Aceitação**        | - Envio de notificação em até 1 minuto após a detecção.                                                                                                             |
+| **Critérios Técnicos (opcional)** | - Integração com Firebase Cloud Messaging. <br> - Logs de envio de alertas.                                                                                         |
 
+| Seção                             | Conteúdo                                                                                                                                                                                 |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID da História**                | HU-006                                                                                                                                                                                   |
+| **Título**                        | Consultar histórico de exames do paciente                                                                                                                                                |
+| **Descrição**                     | Como **médico ou analista** <br> Quero **acessar o histórico de hemogramas do paciente** <br> Para que **possa acompanhar a evolução de seus parâmetros hematológicos**                  |
+| **Contexto / Observações**        | - Deve apresentar gráficos comparativos dos principais índices.                                                                                                                          |
+| **Cenários**                      | 1. **Histórico visualizado** <br> Dado que o paciente possui múltiplos exames <br> Quando abrir seu perfil <br> Então o sistema deve exibir a evolução dos resultados ao longo do tempo. |
+| **Critérios de Aceitação**        | - Exibir ao menos 6 parâmetros em gráficos temporais.                                                                                                                                    |
+| **Critérios Técnicos (opcional)** | - Uso da biblioteca Chart.js ou Recharts. <br> - Dados organizados em API REST.                                                                                                          |
 
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-003                                                                   |
-| **Título**            | Agendar visita a um imóvel                                               |
-| **Descrição**         | Como **cliente interessado** <br> Quero **agendar uma visita a um imóvel disponível** <br> Para que **possa conhecer o local antes de decidir pela compra ou aluguel** |
-| **Contexto / Observações** | - O agendamento deve evitar conflitos de horário. <br> - Deve enviar confirmação automática. |
-| **Cenários**          | 1. **Agendamento bem-sucedido** <br> Dado que o cliente selecionou data e horário disponíveis <br> Quando confirmar <br> Então o sistema deve registrar e notificar o corretor. |
-| **Critérios de Aceitação** | - Mostrar apenas horários disponíveis. <br> - Enviar e-mail/SMS de confirmação. |
-| **Critérios Técnicos (opcional)** | - Integração com Google Calendar. <br> - Lembrete automático 24h antes. |
+| Seção                             | Conteúdo                                                                                                                                                                               |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID da História**                | HU-007                                                                                                                                                                                 |
+| **Título**                        | Validar integridade e consistência dos dados                                                                                                                                           |
+| **Descrição**                     | Como **analista de dados** <br> Quero **garantir a integridade e coerência dos valores de hemograma** <br> Para que **os resultados não sejam comprometidos**                          |
+| **Contexto / Observações**        | - O sistema deve rejeitar valores fora dos intervalos biológicos possíveis.                                                                                                            |
+| **Cenários**                      | 1. **Erro de consistência** <br> Dado que o exame contém valores incoerentes <br> Quando o sistema validar os dados <br> Então deve exibir mensagem de erro e impedir o processamento. |
+| **Critérios de Aceitação**        | - Validar limites laboratoriais padrão. <br> - Exibir erros de inconsistência ao usuário.                                                                                              |
+| **Critérios Técnicos (opcional)** | - Implementar validação via JSON Schema.                                                                                                                                               |
 
+| Seção                             | Conteúdo                                                                                                                                                                         |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID da História**                | HU-008                                                                                                                                                                           |
+| **Título**                        | Aprimorar modelo de IA com novos dados                                                                                                                                           |
+| **Descrição**                     | Como **cientista de dados** <br> Quero **utilizar novos exames rotulados para reentreinar o modelo de IA** <br> Para que **a acurácia na detecção de LPA melhore continuamente** |
+| **Contexto / Observações**        | - Treinamento deve ocorrer em ambiente separado do de produção.                                                                                                                  |
+| **Cenários**                      | 1. **Revisão de modelo** <br> Dado que há novos dados rotulados <br> Quando o treinamento é executado <br> Então o sistema deve recalcular métricas de precisão e sensibilidade. |
+| **Critérios de Aceitação**        | - Acurácia mínima de 90% em novos testes.                                                                                                                                        |
+| **Critérios Técnicos (opcional)** | - Uso de TensorFlow ou PyTorch. <br> - Monitoramento via dashboard de métricas.                                                                                                  |
 
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-004                                                                   |
-| **Título**            | Gerar contrato digital de locação ou venda                               |
-| **Descrição**         | Como **corretor ou administrador** <br> Quero **gerar contratos digitais com base nos dados do cliente e imóvel** <br> Para que **possa formalizar o negócio de forma rápida e segura** |
-| **Contexto / Observações** | - Deve seguir modelo jurídico padronizado. <br> - Permitir assinatura eletrônica. |
-| **Cenários**          | 1. **Contrato gerado com sucesso** <br> Dado que todas as informações estão completas <br> Quando gerar o contrato <br> Então o sistema cria o documento PDF e registra o status. |
-| **Critérios de Aceitação** | - Geração automática com dados do cliente e imóvel. <br> - Registro de status: “em análise”, “assinado”, “concluído”. |
-| **Critérios Técnicos (opcional)** | - Integração com API de assinatura (DocuSign). <br> - Armazenamento seguro na nuvem. |
+| Seção                             | Conteúdo                                                                                                                                                                         |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID da História**                | HU-009                                                                                                                                                                           |
+| **Título**                        | Garantir conformidade com a LGPD                                                                                                                                                 |
+| **Descrição**                     | Como **administrador do sistema** <br> Quero **garantir que os dados de pacientes sejam tratados conforme a LGPD** <br> Para que **a privacidade e segurança sejam preservadas** |
+| **Contexto / Observações**        | - Deve haver consentimento digital e anonimização de dados.                                                                                                                      |
+| **Cenários**                      | 1. **Consentimento informado** <br> Dado que o paciente cadastra um exame <br> Quando for salvo <br> Então o sistema deve registrar o aceite do termo de consentimento.          |
+| **Critérios de Aceitação**        | - Armazenar logs de consentimento. <br> - Dados anonimizados por padrão.                                                                                                         |
+| **Critérios Técnicos (opcional)** | - Criptografia AES-256. <br> - Logs imutáveis de auditoria.                                                                                                                      |
 
-
-
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-005                                                                   |
-| **Título**            | Registrar transação financeira                                           |
-| **Descrição**         | Como **gestor financeiro** <br> Quero **registrar transações de venda, aluguel e comissões** <br> Para que **possa controlar pagamentos e repasses** |
-| **Contexto / Observações** | - Transações vinculadas a contratos. <br> - Pode envolver diferentes métodos de pagamento. |
-| **Cenários**          | 1. **Transação concluída** <br> Dado que o contrato está ativo <br> Quando registrar o pagamento <br> Então o sistema atualiza o status e gera recibo. |
-| **Critérios de Aceitação** | - Cálculo automático da comissão. <br> - Emissão de comprovante digital. |
-| **Critérios Técnicos (opcional)** | - Integração com PIX e APIs bancárias. <br> - Registro de auditoria. |
-
-
-
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-006                                                                   |
-| **Título**            | Upload de documentos do imóvel                                           |
-| **Descrição**         | Como **proprietário ou corretor autorizado** <br> Quero **anexar documentos como escritura e certidões** <br> Para que **fiquem vinculados ao imóvel e possam ser consultados digitalmente** |
-| **Contexto / Observações** | - Tipos de arquivo aceitos: PDF, JPG, PNG. |
-| **Cenários**          | 1. **Upload bem-sucedido** <br> Dado que o corretor acessa o imóvel <br> Quando faz upload de um documento válido <br> Então o sistema armazena o arquivo e exibe data de envio. |
-| **Critérios de Aceitação** | - Cada documento deve ter tipo e validade informados. <br> - Tamanho máximo 10 MB. |
-| **Critérios Técnicos (opcional)** | - Criptografia AES-256. <br> - Controle de acesso baseado em papéis. |
-
-
-
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-007                                                                   |
-| **Título**            | Simular financiamento imobiliário                                        |
-| **Descrição**         | Como **cliente interessado** <br> Quero **simular diferentes opções de financiamento** <br> Para que **eu possa avaliar a melhor forma de pagamento** |
-| **Contexto / Observações** | - Deve considerar taxa de juros, prazo e valor de entrada. |
-| **Cenários**          | 1. **Simulação realizada com sucesso** <br> Dado que o cliente informa valor e prazo <br> Quando solicitar simulação <br> Então o sistema apresenta parcelas e valores totais. |
-| **Critérios de Aceitação** | - Mostrar taxa de juros e CET. <br> - Permitir comparação entre bancos parceiros. |
-| **Critérios Técnicos (opcional)** | - Consumo de APIs bancárias. <br> - Cálculo financeiro preciso conforme tabela SAC. |
-
-
-
-
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-008                                                                   |
-| **Título**            | Gerenciar condomínio vinculado ao imóvel                                 |
-| **Descrição**         | Como **administrador de condomínio** <br> Quero **cadastrar e atualizar informações sobre taxas e regras internas** <br> Para que **os imóveis vinculados estejam com informações atualizadas** |
-| **Contexto / Observações** | - Pode incluir regras e serviços. |
-| **Cenários**          | 1. **Cadastro concluído** <br> Dado que o administrador preenche todos os dados <br> Quando salvar <br> Então o sistema registra o condomínio com sucesso. |
-| **Critérios de Aceitação** | - Campos obrigatórios: nome, CNPJ, taxa de condomínio. |
-| **Critérios Técnicos (opcional)** | - Integração com módulo de imóveis. <br> - Validação automática de CNPJ. |
-
-
-
-
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-009                                                                   |
-| **Título**            | Gerar relatório de desempenho de corretores                              |
-| **Descrição**         | Como **gestor da imobiliária** <br> Quero **visualizar relatórios com número de vendas, locações e comissões** <br> Para que **possa avaliar o desempenho da equipe** |
-| **Contexto / Observações** | - Relatórios podem ser filtrados por período e tipo de transação. |
-| **Cenários**          | 1. **Relatório gerado** <br> Dado que o gestor seleciona um período <br> Quando gerar relatório <br> Então o sistema apresenta resumo e exportação em PDF. |
-| **Critérios de Aceitação** | - Deve permitir exportar em PDF e Excel. <br> - Mostrar total de vendas, locações e comissões. |
-| **Critérios Técnicos (opcional)** | - Geração via biblioteca de relatórios. <br> - Cache de dados para performance. |
+| Seção                             | Conteúdo                                                                                                                                                                                              |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID da História**                | HU-010                                                                                                                                                                                                |
+| **Título**                        | Integrar sistema com prontuário eletrônico hospitalar                                                                                                                                                 |
+| **Descrição**                     | Como **instituição de saúde** <br> Quero **integrar o sistema de detecção ao prontuário eletrônico (PEP)** <br> Para que **os resultados de análise estejam automaticamente disponíveis aos médicos** |
+| **Contexto / Observações**        | - A integração deve seguir o padrão HL7/FHIR.                                                                                                                                                         |
+| **Cenários**                      | 1. **Sincronização de dados** <br> Dado que o exame foi processado <br> Quando o PEP é atualizado <br> Então o resultado da análise deve aparecer automaticamente no prontuário.                      |
+| **Critérios de Aceitação**        | - Sincronização automática e segura.                                                                                                                                                                  |
+| **Critérios Técnicos (opcional)** | - API REST com autenticação OAuth 2.0.                                                                                                                                                                |
 
 
-
-
-| Seção                | Conteúdo                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| **ID da História**    | HU-010                                                                   |
-| **Título**            | Notificar cliente sobre novas oportunidades                             |
-| **Descrição**         | Como **cliente cadastrado** <br> Quero **receber notificações de imóveis compatíveis com meu perfil** <br> Para que **possa aproveitar novas oportunidades rapidamente** |
-| **Contexto / Observações** | - Deve respeitar preferências de comunicação (e-mail, app, SMS). |
-| **Cenários**          | 1. **Notificação enviada** <br> Dado que um novo imóvel é cadastrado <br> Quando o imóvel atender aos critérios do cliente <br> Então o sistema envia notificação automática. |
-| **Critérios de Aceitação** | - Notificações personalizadas por tipo e faixa de preço. <br> - Possibilidade de descadastrar alertas. |
-| **Critérios Técnicos (opcional)** | - Integração com sistema de push notifications. <br> - Fila assíncrona para envio em lote. |
